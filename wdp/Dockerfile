@@ -48,10 +48,10 @@ COPY catalina-wrapper.sh /usr/local/tomcat/bin/catalina-wrapper.sh
 RUN chmod 755 /usr/local/tomcat/bin/catalina-wrapper.sh
 
 #Copy the script to check the status of tomcat server
-COPY check_tomcat.sh /etc/consul/scripts/check_tomcat.sh
+COPY health_check.sh /etc/consul/scripts/health_check.sh
 
 #Change permissions to execute check_tomcat.sh
-RUN chmod 755 /etc/consul/scripts/check_tomcat.sh
+RUN chmod 755 /etc/consul/scripts/health_check.sh
 
 RUN yum install unzip -y
 
